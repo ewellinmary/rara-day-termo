@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta property="og:title" content="RARA Day | Termo de uso de imagem">
+<link rel="icon" href="logo-raraday.png">
+<title>RARA Day | Termo de uso de imagem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#BC1E65;--graf:#393F42;--cinza:#E1DDDD;--fundo:#F7F5F5}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:var(--fundo);font-family:'DM Sans',sans-serif;color:var(--graf);display:flex;align-items:center;justify-content:center;padding:24px 16px}
+.card{background:#fff;width:100%;max-width:520px;border-radius:18px;box-shadow:0 10px 40px rgba(57,63,66,.08);overflow:hidden}
+.top{background:#fff;padding:34px 28px 18px;text-align:center;border-bottom:1px solid var(--cinza)}
+.logoimg{width:200px;max-width:70%;height:auto;display:block;margin:0 auto}
+.logo .r{font-family:'Bodoni Moda',serif;font-size:58px;color:var(--pink);letter-spacing:-2px}
+.logo .d{font-family:'Pinyon Script',cursive;font-size:44px;color:var(--graf);position:absolute;right:-26px;bottom:-20px}
+.sub{margin:14px 0 0;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--pink);font-weight:700}
+.body{padding:24px 28px 30px}
+h1{font-family:'Bodoni Moda',serif;font-weight:400;font-size:24px;margin:0 0 6px}
+.meta{font-size:13px;color:#7a7f82;margin:0 0 18px}
+.termo{background:var(--fundo);border-radius:12px;padding:16px 18px;font-size:13.5px;line-height:1.6;margin-bottom:22px}
+.termo p{margin:0 0 10px}.termo p:last-child{margin:0}
+label.f{display:block;font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin:0 0 6px}
+input[type=text]{width:100%;font:inherit;font-size:16px;padding:13px 14px;border:1.5px solid var(--cinza);border-radius:10px;outline:none;margin-bottom:16px;color:var(--graf)}
+input[type=text]:focus{border-color:var(--pink)}
+.ck{display:flex;gap:12px;align-items:flex-start;cursor:pointer;font-size:14px;line-height:1.45;margin:4px 0 22px}
+.ck input{appearance:none;flex:0 0 22px;width:22px;height:22px;border:1.5px solid var(--graf);border-radius:6px;margin:0;cursor:pointer;display:grid;place-content:center}
+.ck input:checked{background:var(--pink);border-color:var(--pink)}
+.ck input:checked::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-1px)}
+button{width:100%;font:inherit;font-weight:700;font-size:15px;letter-spacing:1px;text-transform:uppercase;padding:15px;border:0;border-radius:40px;background:var(--pink);color:#fff;cursor:pointer;transition:opacity .2s}
+button:disabled{opacity:.4;cursor:default}
+.err{color:var(--pink);font-size:13px;margin:-8px 0 14px;display:none}
+.ok{display:none;text-align:center;padding:40px 28px 46px}
+.ok .s{font-family:'Pinyon Script',cursive;font-size:46px;color:var(--pink);line-height:1}
+.ok h2{font-family:'Bodoni Moda',serif;font-weight:400;font-size:24px;margin:12px 0 8px}
+.ok p{font-size:14px;line-height:1.6;color:#5d6366;margin:0}
+.foot{text-align:center;font-size:11px;color:#9a9ea0;padding:0 0 22px}
+</style></head><body>
+<div class="card">
+  <div class="top"><img class="logoimg" src="logo-raraday.png" alt="RARA Day"><p class="sub">28 de outubro · Casa Olivetto</p></div>
+  <div id="form" class="body">
+    <h1>Termo de uso de imagem</h1>
+    <p class="meta">Leva menos de 1 minuto.</p>
+    <div class="termo">
+      <p>No <b>RARA Day</b> teremos fotógrafo e registros em vídeo ao longo de todo o evento.</p>
+      <p>Ao aceitar este termo, autorizo a <b>TR Company</b> e <b>Tayná Rubbo</b> a utilizarem minha imagem, nome e voz captados no evento em seus canais oficiais, como Instagram, site e materiais de divulgação, sem limite de prazo e sem qualquer custo.</p>
+      <p>Declaro também que as informações preenchidas são verdadeiras e autorizo o uso dos meus dados para fins de organização, comunicação e personalização da minha experiência no programa.</p>
+    </div>
+    <label class="f" for="nome">Nome completo</label>
+    <input type="text" id="nome" autocomplete="name" placeholder="Digite seu nome completo">
+    <label class="ck"><input type="checkbox" id="aceito"><span>Li e <b>aceito</b> o termo de uso de imagem e dados.</span></label>
+    <p class="err" id="err"></p>
+    <button id="btn" disabled>Aceitar e enviar</button>
+  </div>
+  <div id="ok" class="ok">
+    <div class="s">obrigada!</div>
+    <h2>Tudo certo por aqui</h2>
+    <p>Seu aceite foi registrado.<br>Nos vemos amanhã no RARA Day!</p>
+  </div>
+  <div class="foot">TR Company · Tayná Rubbo</div>
+</div>
+<script>
+const API="https://script.google.com/macros/s/AKfycbznte9TtaYjuOlrPxJ-Wh3GfGqj3vshAm43NMtsYmdbv3h-2rQ0bPFh1QudIida9DhN/exec";
+const nome=document.getElementById('nome'),aceito=document.getElementById('aceito'),btn=document.getElementById('btn'),err=document.getElementById('err');
+function check(){btn.disabled=!(nome.value.trim().split(/\s+/).length>=2&&aceito.checked)}
+nome.addEventListener('input',check);aceito.addEventListener('change',check);
+function done(){document.getElementById('form').style.display='none';document.getElementById('ok').style.display='block'}
+function fail(e){btn.disabled=false;btn.textContent='Aceitar e enviar';err.textContent='Não conseguimos enviar. Tente de novo em instantes.';err.style.display='block'}
+btn.addEventListener('click',function(){
+  btn.disabled=true;btn.textContent='Enviando...';err.style.display='none';
+  const data={nome:nome.value.trim()};
+  fetch(API,{method:'POST',mode:'no-cors',body:new URLSearchParams(data)}).then(done).catch(fail);
+});
+</script>
+</body></html>
